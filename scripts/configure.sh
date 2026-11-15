@@ -1,0 +1,1 @@
+cmake --preset conan-debug -S . -B ./build/Debug

@@ -1,0 +1,15 @@
+# SITE_ADDRESS: dominio pubblico (certificato Let's Encrypt automatico)
+# oppure localhost / IP (certificato dalla CA interna di Caddy).
+{$SITE_ADDRESS:localhost} {
+	# Per un hostname di LAN (es. cam.lan) decommenta:
+	# tls internal
+
+	# Opzionale: password (genera l'hash con `caddy hash-password`)
+	# basic_auth {
+	# 	utente <hash>
+	# }
+
+	reverse_proxy proxy:8080 {
+		flush_interval -1   # niente buffering: i frame MJPEG partono subito
+	}
+}
