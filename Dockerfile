@@ -7,7 +7,9 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /src
 COPY CMakeLists.txt .
+COPY include/ include/
 COPY src/ src/
+COPY app/ app/
 RUN cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
  && cmake --build build -j"$(nproc)" \
  && strip build/mjpeg-proxy
@@ -17,7 +19,7 @@ FROM ubuntu:24.04 AS proxy
 COPY --from=build /src/build/mjpeg-proxy /usr/local/bin/mjpeg-proxy
 USER ubuntu
 EXPOSE 8080
-# argomenti: <url-upstream> [porta=8080] [bind=0.0.0.0]
+# argomenti: [--port N] [--bind ADDR] [--max-clients N] [--max-connections N] <nome>=<http://host[:porta]/path> [...]
 ENTRYPOINT ["mjpeg-proxy"]
 
 # ---------- 3) TLS con Caddy (target: tls) ----------

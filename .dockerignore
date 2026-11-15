@@ -1,0 +1,8 @@
+.git/
+.conan2/
+.venv/
+build/
+frames*/
+scripts/
+tools/
+*.md

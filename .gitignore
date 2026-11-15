@@ -1,3 +1,10 @@
-**/.venv
-**/build
-**/frames*
+**/.venv/
+**/build/
+/frames*/
+
+# generato da `conan install`
+/CMakeUserPresets.json
+
+# Conan: si versiona solo il profilo, non la cache dei pacchetti
+/.conan2/*
+!/.conan2/profiles/

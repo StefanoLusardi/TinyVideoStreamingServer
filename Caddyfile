@@ -9,7 +9,8 @@
 	# 	utente <hash>
 	# }
 
-	reverse_proxy proxy:8080 {
+	# "mjpeg-proxy" e' il nome del container del proxy sulla rete Docker condivisa.
+	reverse_proxy mjpeg-proxy:8080 {
 		flush_interval -1   # niente buffering: i frame MJPEG partono subito
 	}
 }
