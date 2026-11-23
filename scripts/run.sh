@@ -16,4 +16,5 @@ python3 tools/fake_esp32.py --port 9006 --frames frames2 &
 echo "apri http://127.0.0.1:8080"
 "$BIN" --port 8080 \
     salotto=http://127.0.0.1:9005/stream \
-    garage=http://127.0.0.1:9006/stream
+    garage=http://127.0.0.1:9006/stream \
+    live=http://192.168.1.215:81/stream
