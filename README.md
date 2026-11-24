@@ -4,11 +4,10 @@ A lightweight C++20 MJPEG video streaming proxy server.
 
 TinyVideoStreamingServer allows you to connect multiple MJPEG cameras and expose their video streams through a single HTTP server.
 
-![Demo](./assets/video.gif)
-
-![Project screenshot](./assets/screen.png)
-
 ---
+
+![Demo](./assets/demo.gif)
+
 
 ## Features
 
